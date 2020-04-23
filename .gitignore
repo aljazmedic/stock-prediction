@@ -1,0 +1,14 @@
+.env
+
+venv/
+logs/
+__pychache__/
+.idea/
+preprocessed/
+models/
+world_stocks/
+*.pyc
+last_chart.png
+model.png
+
+test.py
