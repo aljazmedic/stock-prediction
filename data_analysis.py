@@ -116,19 +116,23 @@ def main(stock, seq_len, epochs, batch_size, action='train', show=False, verbose
 	logger.info("{} model, loss: {:5.2f}%, accuracy: {:5.2f}%".format(model_stage, 100 * loss, 100 * acc))
 
 	# Display the model's architecture
-	plot_model(model, to_file='./model.png', rankdir='LR', dpi=300)
+	# plot_model(model, to_file='./model.png', rankdir='LR', dpi=300) # requires install graphviz and pydot
 	# model.summary()
 
 	if action == 'load':
 		# Loading
 		latest = tf.train.latest_checkpoint(os.path.join('models', 'checkpoint'))
 		logger.info(f"Latest checkpoint file: {latest}")
-		model.load_weights(latest)
-		loss, acc = model.evaluate(X_test, y_test, verbose=verbose)
-		model_stage = "Loaded"
-		logger.info("{} model, loss: {:5.2f}%, accuracy: {:5.2f}%".format(model_stage, 100 * loss, 100 * acc))
+		if latest is not None:
+			model.load_weights(latest)
+			loss, acc = model.evaluate(X_test, y_test, verbose=verbose)
+			model_stage = "Loaded"
+			logger.info("{} model, loss: {:5.2f}%, accuracy: {:5.2f}%".format(model_stage, 100 * loss, 100 * acc))
+		else:
+			# no checkpoint data
+			action = 'train'
 
-	elif action == 'train':
+	if action == 'train':
 		model.fit(
 			X_train, y_train,
 			batch_size=batch_size,

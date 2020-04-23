@@ -22,7 +22,7 @@ def read_or_raise(paths):
 			with open(name, 'rb') as rf:
 				r.append(pickle.load(rf))
 		return r
-	raise FileNotFoundError()
+	raise FileNotFoundError
 
 
 def save_pickle(paths, objs):

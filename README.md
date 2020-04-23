@@ -1,7 +1,7 @@
 ## Predvidevanje vrednosti delnic s tensorflowom v pythonu
 
 Za zagon na windowsu je potrebno namestiti
-[python 3.6](https://www.python.org/downloads/release/python-360/")
+[python 3.6.8](https://www.python.org/downloads/release/python-368/)
 
 Ko je Python nameščen, je potrebno posodobiti nameščevalec knjižnic pip
 ```cmd
@@ -44,3 +44,11 @@ Ima dve glavni funkcionalnosti:
 	
   - Treniranje modela na podlagi delnice MSFT, prikazom na grafu <br>
 	`stock predict MSFT --display --train`
+
+##### Uporaba matplotlib vmesnika
+* S kontrolnimi gumbi se lahko pomaknemo v izhodiščni pogled. (hišica)
+* Med pogledi se ne moremo pomikati, saj imamo le en pogled (levo, desno)
+* Pomikanje po risalni površini (puščice)
+* Približevanje risalne površine (povečevalno steklo) - če držimo `x` ali `y` je približevanje zaklenjeno na določeno os
+* Nastavitve velikosti risalnega področja znotraj okna (nastavljivi gumbi)
+* Shrani območje kot sliko (disketa)
