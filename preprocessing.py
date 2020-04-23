@@ -71,7 +71,7 @@ def equalize_sets(data, func):
 
 
 def create_preprocessed_df_binary(stock, seq_len):
-	# type: (Stock, int) -> Optional[list]
+	# type: (Stock, int) -> Tuple[np.array, np.array]
 	# Expected : ["log_mid_delta_preceding","RIC","target"]
 
 	work_array = stock.prediction_model_data().values
@@ -93,7 +93,7 @@ def create_preprocessed_df_binary(stock, seq_len):
 
 	"""  shuffle rows  """
 	random.shuffle(data)
-	X_ret, y_ret = split_tuples(data, np.float32, ndmin=3)
+	X_ret, y_ret = split_tuples(data, np.float32)
 	X_ret = np.expand_dims(X_ret, axis=2)
 	y_ret = np.expand_dims(y_ret, axis=2)
 	save_pickle(paths, [X_ret, y_ret])
