@@ -195,7 +195,6 @@ class Stock(object):
 		return work_dataframe
 
 	@ignore_stock_exceptions(StockInformationMissingException)
-	# @save_to_group("macds")
 	@join_with_dataframe_as("MACD", "MACD_signal", "MACD_histogram", default_make_unique=False)
 	@default_perform_on("close")
 	def macd(self, histogram, slow=26, fast=12, *, work_dataframe, col_idxs):

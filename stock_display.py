@@ -13,6 +13,7 @@ from pandas.plotting import register_matplotlib_converters
 import decorators
 import logging
 from stock_exceptions import StockInformationMissingException
+from stock import Stock
 
 logging.getLogger('matplotlib.font_manager').disabled = True
 logging.getLogger('matplotlib').setLevel(logging.CRITICAL)
@@ -76,7 +77,7 @@ def plot_stock_groups(ax, stock, colors, *groups):
 
 @decorators.ignore_stock_exceptions(StockInformationMissingException)
 def plot_rsi(ax, stock, colors):
-	# type: (matplotlib.axes.Axes, stock_core.Stock, Dict) -> None
+	# type: (matplotlib.axes.Axes, Stock, Dict) -> None
 	ticker, df = stock.unpack()
 	if 'RSI' not in df:
 		return
@@ -95,7 +96,7 @@ def plot_rsi(ax, stock, colors):
 
 @decorators.ignore_stock_exceptions(StockInformationMissingException)
 def plot_volume(ax, stock, colors):
-	# type: (matplotlib.axes.Axes, stock_core.Stock, Dict) -> None
+	# type: (matplotlib.axes.Axes, Stock, Dict) -> None
 	ticker, df = stock.unpack()
 	if 'volume' not in df:
 		return
@@ -108,7 +109,7 @@ def plot_volume(ax, stock, colors):
 
 
 def plot_macd(ax, stock, colors):
-	# type: (matplotlib.axes.Axes, stock_core.Stock, Dict) -> None
+	# type: (matplotlib.axes.Axes, Stock, Dict) -> None
 	ticker, df = stock.unpack()
 	ax.tick_params(axis='x')
 	ax.plot(df.index, df['MACD'])

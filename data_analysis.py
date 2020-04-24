@@ -170,4 +170,4 @@ if __name__ == '__main__':
 	seq_len = 48
 	epochs = 50
 	batch_size = 64
-	main(stock, seq_len, epochs, batch_size, show=True, action='')
+	main(stock, seq_len, epochs, batch_size, show=True, action='train')
