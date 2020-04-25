@@ -1,54 +1,52 @@
-## Predvidevanje vrednosti delnic s tensorflowom v pythonu
+## Stock prediction in python
 
-Za zagon na windowsu je potrebno namestiti
+### Setup
+In order to run the stock prediction,
 [python 3.6.8](https://www.python.org/downloads/release/python-368/)
+has to be installed
 
-Ko je Python nameščen, je potrebno posodobiti nameščevalec knjižnic pip
+All the dependencies are found in requirements.txt file, install with
 ```cmd
 python -m pip install --upgrade pip
-```
-Nato je potrebno namestiti vse potrebne knjižnice<br>
-V ukazni vrstici vstopimo v direktorij projekta in zaženemo
-```cmd
 pip install -r requirements.txt
 ```
-Program za pravilno delovanje potrebuje tudi API ključe. Vsakega izmed njih lahko dobimo z registracijo na spletne strani, napisane v .env.preview.
-Ključe vnesemo med narekovaje v datoteko in datoteko preimenujemo
-```cmd
+You need to set up api keys for Alpaca and Alphavantage.
+Sample `.env.preview` file can be found in root directory.
+Fill in your values and rename it:
+```bash
+# MS-DOS
 move .env.preview .env
+# bash
+mv .env.preview .env
 ``` 
 
-Ko so ključi na mestu in se knjižnice namestijo, lahko z zagonom
-`stock` in parametri zaženemo program
+You can run the problem using `stock` and giving it the paramteres
 
-### Uporaba ukaza stock
-`stock -h` prikaže vse možne ukaze<br>
-Ima dve glavni funkcionalnosti:
-##### Prikaz grafov delnic z indikatorji
+### Usage
+`stock -h` shows all possible flags and commands<br>
+####Main two functions are:
+##### Display of graphs for given stock
 
-  - Prikaz delnice AMZN<br>
+  - Show graf of the stock AMZN<br>
 	`stock display --stocks AMZN`
 
-  - Prikaz delnice MSFT <br>z indikatorjem SMA z 10-dnevnim oknom:<br>
+  - Show graph of the stock MSFT <br>
+  with indicator SMA (10-day window)<br>
 	`stock display --stocks MSFT --indicators SMA.10`
 	
-  - Prikaz delnice AAPL <br>z indeikatorjem VWAP z 19-dnevnim oknom <br>z eksplicitnim izpisom programa<br>
+  - Show graf of the stock AAPL
+  <br>with indicator VWAP (19-day window)
+  <br>and verbose output<br>
 	`stock -v display --stocks AAPL --indicators VWAP.19`
-##### Predvidevanje delnic
+##### Stock prediction
 
-  - Kreacija modela na podlagi delnice AMZN<br>
+  - Create a model based on the stock AMZN<br>
 	`stock predict AMZN`
 
-  - Nalaganje modela na podlagi delnice AAPL, prikazom na grafu<br>
+  - Create a model based on the stock AAPL,<br>display it<br>
 	`stock predict AAPL --display`
 	
-  - Treniranje modela na podlagi delnice MSFT, prikazom na grafu <br>
+  - Create and train a model based on the stock MSFT,<br>
+  display it <br>
 	`stock predict MSFT --display --train`
 
-##### Uporaba matplotlib vmesnika
-* S kontrolnimi gumbi se lahko pomaknemo v izhodiščni pogled. (hišica)
-* Med pogledi se ne moremo pomikati, saj imamo le en pogled (levo, desno)
-* Pomikanje po risalni površini (puščice)
-* Približevanje risalne površine (povečevalno steklo) - če držimo `x` ali `y` je približevanje zaklenjeno na določeno os
-* Nastavitve velikosti risalnega področja znotraj okna (nastavljivi gumbi)
-* Shrani območje kot sliko (disketa)
