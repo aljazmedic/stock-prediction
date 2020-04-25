@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import numpy as np
 import pandas as pd
-from mpl_finance import candlestick_ohlc
+import mplfinance.original_flavor as mpf
 from pandas.plotting import register_matplotlib_converters
 
 from stocker import decorators
@@ -42,7 +42,7 @@ def plot_stock_price(ax, stock, colors, only_close=False):
 		if only_close:
 			raise StockInformationMissingException()
 		ohlc = stock.ohlc()
-		candlestick_ohlc(
+		mpf.candlestick_ohlc(
 			ax,
 			ohlc.values,
 			width=0.5,
