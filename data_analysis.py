@@ -12,11 +12,9 @@ from tensorflow.keras.callbacks import ModelCheckpoint, TensorBoard, Callback
 from tensorflow.keras.layers import Dense, Dropout, LSTM, BatchNormalization
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.utils import plot_model
 
 from preprocessing import create_preprocessed_df_binary
-from stock import Stock
-from stock_server import StockServer
+from stocker import Stock, StockServer
 
 logger = logging.getLogger(__name__)
 logging.getLogger('tensorflow').setLevel(logging.CRITICAL)
@@ -153,7 +151,7 @@ def main(stock, seq_len, epochs, batch_size, action='train', show=False, verbose
 
 	print("{:5.2f}% verjetnost padanja, {:5.2f}% verjetnost naraščanja".format(*model_io_data[1][-1]*100))
 	if show:
-		from stock_display import graph_stock
+		from stocker.stock_display import graph_stock
 		import matplotlib.pyplot as plt
 		from pandas.plotting import register_matplotlib_converters
 		register_matplotlib_converters()

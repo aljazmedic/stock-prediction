@@ -6,7 +6,8 @@ from typing import Union, Optional
 import alpaca_trade_api as tradeapi
 import dotenv
 
-from stock import FundNotFoundException, Stock, FundOutFileNameException
+from stocker.stock import Stock
+from stocker.stock_exceptions import FundNotFoundException, FundOutFileNameException
 
 logger = logging.getLogger(__name__)
 logging.getLogger("chardet").setLevel(logging.CRITICAL)

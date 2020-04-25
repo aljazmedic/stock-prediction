@@ -3,7 +3,7 @@ from typing import Union, Tuple, Optional, List
 
 from numpy import single
 
-from stock import Stock
+from stocker import Stock
 import numpy as np
 import pickle
 import datetime as dt

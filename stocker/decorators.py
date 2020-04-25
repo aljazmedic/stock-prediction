@@ -1,6 +1,6 @@
 from functools import wraps
 import logging
-from stock_exceptions import StockInformationMissingException
+from stocker.stock_exceptions import StockInformationMissingException
 from typing import Tuple, Optional, Type
 
 """ Dektoratorji za metode razreda Stock """

@@ -10,10 +10,10 @@ import pandas as pd
 from mpl_finance import candlestick_ohlc
 from pandas.plotting import register_matplotlib_converters
 
-import decorators
+from stocker import decorators
 import logging
-from stock_exceptions import StockInformationMissingException
-from stock import Stock
+from stocker.stock_exceptions import StockInformationMissingException
+from stocker.stock import Stock
 
 logging.getLogger('matplotlib.font_manager').disabled = True
 logging.getLogger('matplotlib').setLevel(logging.CRITICAL)

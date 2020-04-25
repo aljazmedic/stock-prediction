@@ -2,10 +2,9 @@ import datetime as dt
 import logging
 import os
 from typing import List, Tuple, Optional
-from stock import FundNotFoundException, add_indicators, Stock
+from stocker import FundNotFoundException, add_indicators, Stock, StockServer
 
 import matplotlib.pyplot as plt
-from stock_server import StockServer
 
 logger = logging.getLogger()
 
@@ -50,7 +49,7 @@ def get_tickers(wws, *fund_tickers):
 
 
 def display_command(wss, parsed_args):
-	import stock_display
+	from stocker import stock_display
 	stocks = {}
 
 	for stock_query in parsed_args.stocks:

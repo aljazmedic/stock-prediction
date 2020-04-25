@@ -1,5 +1,4 @@
 import datetime as dt
-import logging
 import os
 from collections import defaultdict
 from typing import Union, Dict, List, Any
@@ -8,8 +7,8 @@ import numpy as np
 import pandas as pd
 from matplotlib.dates import date2num
 
-from decorators import *
-from stock_exceptions import *
+from stocker.decorators import *
+from stocker.stock_exceptions import *
 
 logger = logging.getLogger(__name__)
 logging.getLogger("chardet").setLevel(logging.CRITICAL)
@@ -407,7 +406,7 @@ def _parse_function(in_str):
 
 
 if __name__ == '__main__':
-	from stock_server import StockServer
+	from stocker.stock_server import StockServer
 
 	world_stock_server = StockServer()
 	MSFT_stock = world_stock_server["MSFT"]
