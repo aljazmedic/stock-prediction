@@ -24,7 +24,7 @@ You can run the problem using `stock` and giving it the paramteres
 
 ### Usage
 `stock -h` shows all possible flags and commands<br>
-####Main two functions are:
+#### Main two functions are:
 ##### Display of graphs for given stock
 
   - Show graf of the stock AMZN<br>
