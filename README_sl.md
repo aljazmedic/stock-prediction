@@ -8,10 +8,7 @@ Ko je Python nameščen, je potrebno posodobiti nameščevalec knjižnic pip
 ```cmd
 python -m pip install --upgrade pip
 ```
-Klonirajte spletni repozitorij na lokalni računalnik
-```cmd
-git clone https://github.com/aljazmedic/stock-prediction.git
-```
+
 Nato je potrebno namestiti vse potrebne knjižnice<br>
 V ukazni vrstici vstopimo v direktorij projekta in zaženemo
 ```cmd
