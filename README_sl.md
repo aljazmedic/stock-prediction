@@ -3,9 +3,11 @@
 Za zagon na windowsu je potrebno namestiti
 [python 3.6.8](https://www.python.org/downloads/release/python-368/)
 
-Pomožno: ustvarite virtualno okolje
+Pomožno: ustvarite in aktivirajte virtualno okolje
 ```cmd
+cd stock-prediction
 python -m venv venv
+./venv/Scripts/Activate.ps1
 ```
 
 Ko je Python nameščen, je potrebno posodobiti nameščevalec knjižnic pip
