@@ -3,6 +3,11 @@
 Za zagon na windowsu je potrebno namestiti
 [python 3.6.8](https://www.python.org/downloads/release/python-368/)
 
+Klonirajte spletni repozitorij na lokalni računalnik
+```cmd
+git clone https://github.com/aljazmedic/stock-prediction.git
+```
+
 Ko je Python nameščen, je potrebno posodobiti nameščevalec knjižnic pip
 ```cmd
 python -m pip install --upgrade pip
