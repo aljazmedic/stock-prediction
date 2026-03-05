@@ -19,7 +19,7 @@ joblib==1.2.0
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
 kiwisolver==1.2.0
-Markdown==3.2.1
+Markdown==3.8.1
 matplotlib==3.2.1
 mplfinance==0.12.3a3
 numpy==1.22.0
